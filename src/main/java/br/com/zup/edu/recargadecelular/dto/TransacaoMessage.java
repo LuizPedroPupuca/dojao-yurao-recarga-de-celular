@@ -1,4 +1,4 @@
-package br.com.zup.edu.msemail.enviaremail;
+package br.com.zup.edu.recargadecelular.dto;
 
 import java.math.BigDecimal;
 
@@ -10,6 +10,13 @@ public class TransacaoMessage {
     private Long clienteId;
     private Long conta;
 
+    public TransacaoMessage(String operacao, BigDecimal valor, String feitaEm, Long clienteId, Long conta) {
+        this.operacao = operacao;
+        this.valor = valor;
+        this.feitaEm = feitaEm;
+        this.clienteId = clienteId;
+        this.conta = conta;
+    }
 
     public String getOperacao() {
         return operacao;
@@ -29,5 +36,16 @@ public class TransacaoMessage {
 
     public Long getConta() {
         return conta;
+    }
+
+    @Override
+    public String toString() {
+        return "TransacaoMessage{" +
+                "operacao='" + operacao + '\'' +
+                ", valor=" + valor +
+                ", feitaEm='" + feitaEm + '\'' +
+                ", clienteId=" + clienteId +
+                ", conta=" + conta +
+                '}';
     }
 }
